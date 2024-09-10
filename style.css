@@ -1,0 +1,289 @@
+:root {
+  /* text color */
+
+  /* sub-heading at the top of the app UI */
+  --Pale-violet: hsl(276, 100%, 81%);
+  /* chat on the left */
+  --Moderate-violet: hsl(276, 55%, 52%);
+  /* chat on the right */
+  --Desaturated-violet: hsl(271, 15%, 43%);
+  /* placeholder text */
+  --Grayish: hsl(206, 6%, 79%);
+  /* main heading */
+  --v-d-Desaturated: hsl(271, 36%, 24%);
+  /* paragraph */
+  --d-Grayish: hsl(270, 7%, 64%);
+
+  /* gradient */
+
+  --Magenta: hsl(293, 100%, 63%);
+  --Violet: hsl(264, 100%, 61%);
+
+  /* background */
+  /* app background */
+  --light-Grayish: hsl(270, 20%, 96%);
+  /* submit button background */
+  --v-d-Grayish: hsl(271, 36%, 24%);
+  /* radio button outline */
+  --v-l-Magenta: hsl(289, 100%, 72%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.leftGradient .col {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400px;
+  height: 60vh;
+  background-image: linear-gradient(
+    to bottom,
+    var(--Magenta) 5%,
+    var(--Violet) 95%
+  );
+  z-index: 2;
+}
+.leftGradient .circle {
+  border-radius: 50%;
+  background: var(--Violet);
+  position: absolute;
+  left: 0;
+  top: 60vh;
+  width: 400px;
+  height: 400px;
+  transform: translateY(-50%);
+}
+.mobile_model {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+
+  z-index: 10;
+}
+
+.mobile {
+  background: white;
+  padding: 10px;
+  height: min(90vh, 600px);
+  width: min(90%, 350px);
+  border-radius: 20px;
+
+  box-shadow: 0px 0px 30px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.mobile .top {
+  width: 50%;
+  height: 40px;
+  background-color: white;
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  top: -10px;
+  border-radius: 30px;
+}
+.inside_mobile {
+  background-color: var(--light-Grayish);
+  border-radius: 20px;
+  padding-bottom: 5px;
+}
+
+.inside_mobile .mobile_header {
+  background-image: linear-gradient(45deg, var(--Violet), var(--Magenta));
+  border-radius: 20px 20px 0 0;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: fit-content;
+  padding-top: 40px;
+  color: white;
+  height: 80px;
+}
+span svg {
+  width: 24px;
+  height: 24px;
+}
+span.arrow {
+  margin-right: 10px;
+}
+
+.mobile_header .avatar_container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  width: 90%;
+}
+.avatar_container img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+
+.avatar_data .name {
+  font-weight: 500;
+}
+.avatar_data .status {
+  font-weight: 300;
+  font-size: 12px;
+}
+
+/*  */
+
+.mobile_body {
+  padding: 20px;
+  padding-bottom: 0;
+}
+
+.mobile_body p {
+  border-radius: 20px;
+  width: 100%;
+  font-size: 10px;
+  display: flex;
+  margin-bottom: 5px;
+  display: flex;
+}
+.mobile_body .me {
+  justify-content: flex-start;
+}
+
+.mobile_body .you {
+  justify-content: flex-end;
+}
+.mobile_body .me > span {
+  width: 60%;
+  padding: 10px;
+  border-radius: 10px 10px 10px 0px;
+  color: var(--Moderate-violet);
+  background-color: var(--Grayish);
+}
+
+.mobile_body .you > span {
+  padding: 10px;
+  border-radius: 10px 10px 0px 10px;
+  color: var(--Desaturated-violet);
+  background-color: #fff;
+}
+
+.mobile_body .you.image_container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  background: var(--light-Grayish);
+}
+
+.image_container img {
+  width: 50px;
+  height: 50px;
+  border-radius: 15px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.me.active > span {
+  background-image: linear-gradient(45deg, var(--Violet), var(--Magenta));
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.me.active > span .circle {
+  height: 20px;
+  width: 20px;
+  border: 1px solid var(--v-l-Magenta);
+  border-radius: 50%;
+}
+
+.me.active > span .bold {
+  font-weight: 600;
+}
+
+/*  */
+
+.mobile_footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px;
+  background: white;
+  width: 90%;
+  margin: 5px auto;
+  border-radius: 20px;
+  font-size: 12px;
+  color: var(--Grayish);
+}
+.arrow-right svg {
+  width: 16px;
+}
+.arrow-right {
+  background: #000;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/*  */
+.text_container {
+  width: 50%;
+
+  min-height: 100vh;
+  padding: 0 10%;
+  display: flex;
+  align-items: center;
+}
+
+.text h2 {
+  color: var(--v-d-Desaturated);
+  font-size: 2rem;
+}
+
+.text p {
+  color: var(--d-Grayish);
+  font-size: 1rem;
+  margin-top: 20px;
+}
+
+@media only screen and (max-width: 740px) {
+  .mobile_model {
+    width: 100%;
+    justify-content: center;
+  }
+  .leftGradient .col {
+    left: -200px;
+  }
+  .leftGradient .circle {
+    left: -200px;
+  }
+
+  .text_container {
+    min-height: fit-content;
+    width: 100%;
+    padding: 30px;
+  }
+  .text {
+    margin: auto;
+    text-align: center;
+  }
+}
